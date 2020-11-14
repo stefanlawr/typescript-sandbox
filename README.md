@@ -29,3 +29,5 @@ TypeScript adds...
 - object ( {age: 20} ) Any JS object, more specific types are possible 
 - Array ( [1,2,3] ) Any JS array, type can be flexible or strict
 - Tuple ( [1,2] ) Added by TS, Fixed Length array
+- Enum ( enum { NEW, OLD} ) Added by TS, Automatically enumerated global constant identifiers
+- Any ( * ) Any kind of value, no specific type assignment
