@@ -1,38 +1,16 @@
-// // Role Tuple
-
-// const person: {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string];
-// } = {
-//     name: 'Foo',
-//     age: 30,
-//     hobbies: ['Sports', 'Cooking'],
-//     role: [2, 'Author']
-// }
-
-enum Role {ADMIN, READ_ONLY, AUTHOR};
-// enum Role {ADMIN = 5, READ_ONLY = 100, AUTHOR = 200}; // Valid Syntax
-// enum Role {ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 'AUTHOR'}; // Valid Syntax
-
-// Role Enum
-const person = {
-    name: 'Foo',
-    age: 30,
-    hobbies: ['Sports', 'Cooking'],
-    role: Role.ADMIN,
+// Union Type
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if(typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
 
-let favoriteActivities : string[];
-favoriteActivities = ['Sports'];
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
 
-console.log(person);
-
-for(const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase());
-}
-
-if(person.role === Role.ADMIN) {
-    console.log("Is Admin");
-}
+const combinedNames = combine('Max', 'Anna');
+console.log(combinedNames);
