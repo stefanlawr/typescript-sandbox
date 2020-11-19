@@ -1,29 +1,16 @@
-function add(n1: number, n2: number) {
-    return n1 + n2;
+// any type with more strict type checking
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Max';
+
+if(typeof userInput === 'string') {
+    userName = userInput;
 }
 
-function printResult(num: number) {
-    console.log('Result: ' + num);
+function generateError(message: string, code: number): never {
+    throw {errorMessage: message, errorCode: code};
 }
 
-// Callback function
-function addAndHandle(n1: number, n2: number, cb: (a: number) => void) {
-    const result = n1 + n2;
-    cb(result);
-}
-
-printResult(add(5,12));
-
-let someValue: undefined;
-
-// Both are valid 
-
-// let combineValues: Function;
-let combineValues: (a: number, b: number) => number;
-combineValues = add;
-
-console.log(combineValues(5,8));
-
-addAndHandle(10, 20, (result)=> {
-    console.log(result);
-});
+generateError('Error occured!', 500);

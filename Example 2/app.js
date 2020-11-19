@@ -1,20 +1,12 @@
-function add(n1, n2) {
-    return n1 + n2;
+// any type with more strict type checking
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'Max';
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-function printResult(num) {
-    console.log('Result: ' + num);
+function generateError(message, code) {
+    throw { errorMessage: message, errorCode: code };
 }
-function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
-    cb(result);
-}
-printResult(add(5, 12));
-var someValue;
-// Both are valid 
-// let combineValues: Function;
-var combineValues;
-combineValues = add;
-console.log(combineValues(5, 8));
-addAndHandle(10, 20, function (result) {
-    console.log(result);
-});
+generateError('Error occured!', 500);
